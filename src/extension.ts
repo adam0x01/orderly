@@ -24,18 +24,44 @@ export function activate(context: vscode.ExtensionContext) {
 		const s = editor.selections;
 		
 		editor.edit((edit) => {
+			let i = 1;
 			s.forEach(_s => {
-				console.log(_s.start, "=>", _s.end);
-				edit.insert(_s.start, "1234");
+				// console.log(_s.start, "=>", _s.end);
+				edit.insert(_s.start, `${i}.`);
+				i++;
 			});
 		});
 
+		vscode.window.showInformationMessage('Hello World from orderly! test1');
+	});
 
-		console.log(s);
-		vscode.window.showInformationMessage('Hello World from orderly! edfdf');
+
+	let disposable2 = vscode.commands.registerCommand('orderly.helloWorld2', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (editor === undefined) {
+			return;
+		}
+
+		const s = editor.selections;
+		
+		editor.edit((edit) => {
+			let i = 1;
+			s.forEach(_s => {
+				// console.log(_s.start, "=>", _s.end);
+				edit.insert(_s.start, `${i})`);
+				i++;
+			});
+		});
+
+	});
+
+	let disposable3 = vscode.commands.registerCommand('orderly.reorder', () => {
+		// find sequence and replace
 	});
 
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable2);
+	context.subscriptions.push(disposable3);
 }
 
 // this method is called when your extension is deactivated
