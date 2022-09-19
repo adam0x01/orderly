@@ -10,18 +10,18 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:orderly.helloWorld",
-    "onCommand:orderly.helloWorld2"
+    "onCommand:orderly.sequenceStyle1",
+    "onCommand:orderly.sequenceStyle2"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "orderly.helloWorld",
+        "command": "orderly.sequenceStyle1",
         "title": "Orderly: add sequence 1. 2. 3."
       },
       {
-        "command": "orderly.helloWorld2",
+        "command": "orderly.sequenceStyle2",
         "title": "Orderly: add sequence 1) 2) 3)"
       },
       {

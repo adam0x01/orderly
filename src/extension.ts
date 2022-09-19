@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('orderly.helloWorld', () => {
+	let disposable = vscode.commands.registerCommand('orderly.sequenceStyle1', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		const editor = vscode.window.activeTextEditor;
@@ -36,24 +36,33 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 
-	let disposable2 = vscode.commands.registerCommand('orderly.helloWorld2', () => {
-		const editor = vscode.window.activeTextEditor;
-		if (editor === undefined) {
-			return;
-		}
+	let disposable2 = vscode.commands.registerCommand('orderly.sequenceStyle2', () => {
+        const editor = vscode.window.activeTextEditor;
+        if (editor === undefined) {
+            return;
+        }
+        const s = editor.selections;
 
-		const s = editor.selections;
-		
-		editor.edit((edit) => {
-			let i = 1;
-			s.forEach(_s => {
-				// console.log(_s.start, "=>", _s.end);
-				edit.insert(_s.start, `${i})`);
-				i++;
-			});
-		});
+        // get range
+        const textRange = new vscode.Range(s[0].start, s[0].end);
 
-	});
+        // get text
+        const text = editor.document.getText(s[0]);
+
+        console.log("s", s[0].start, s[0].end, textRange, text);
+        
+        // TODO: use vscode.Range and insert the order for each line
+		// TODO: after insertion, add pending cursor for each edition
+        editor.edit((edit) => {
+            let i = 1;
+            s.forEach(_s => {
+                // console.log(_s.start, "=>", _s.end);
+                edit.insert(_s.start, `${i})`);
+                i++;
+            });
+        });
+    });
+
 
 	let disposable3 = vscode.commands.registerCommand('orderly.reorder', () => {
 		// find sequence and replace
