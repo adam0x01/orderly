@@ -25,6 +25,10 @@
         "title": "Orderly: add sequence 1) 2) 3)"
       },
       {
+        "command": "orderly.sequenceStyle3",
+        "title": "Orderly: add sequence by multiple cursors"
+      },
+      {
         "command": "orderly.reorder",
         "title": "Orderly: reorder"
       }

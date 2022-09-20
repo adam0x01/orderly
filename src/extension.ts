@@ -50,16 +50,28 @@ export function activate(context: vscode.ExtensionContext) {
         const text = editor.document.getText(s[0]);
 
         console.log("s", s[0].start, s[0].end, textRange, text);
-        
+
+		const regex = /\n[^$]/g;
+		const found = text.split(regex);
+
+		if (found?.length === 0) {
+			return;
+		}
+
+		let result = '';
+		let number = 1;
+		found.forEach( v => {
+			if(v.length !== 0) {
+				result += `${number}) ${v}\n`;
+				number++;
+			}
+		});
+
         // TODO: use vscode.Range and insert the order for each line
 		// TODO: after insertion, add pending cursor for each edition
         editor.edit((edit) => {
-            let i = 1;
-            s.forEach(_s => {
-                // console.log(_s.start, "=>", _s.end);
-                edit.insert(_s.start, `${i})`);
-                i++;
-            });
+            // let i = 1;
+			edit.replace(textRange, result);
         });
     });
 
