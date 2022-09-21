@@ -2,35 +2,32 @@
   "name": "orderly",
   "displayName": "orderly",
   "description": "Generate numerical or alphabetical order list for your text.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.71.0"
   },
   "categories": [
-    "Other"
+    "Formatters"
   ],
   "activationEvents": [
     "onCommand:orderly.sequenceStyle1",
-    "onCommand:orderly.sequenceStyle2"
+    "onCommand:orderly.sequenceStyle2",
+    "onCommand:orderly.regenerateOrder"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "orderly.sequenceStyle1",
-        "title": "Orderly: add sequence 1. 2. 3."
+        "title": "Orderly: add sequence (multiple cursors)"
       },
       {
         "command": "orderly.sequenceStyle2",
-        "title": "Orderly: add sequence 1) 2) 3)"
+        "title": "Orderly: add sequence (single selection)"
       },
       {
-        "command": "orderly.sequenceStyle3",
-        "title": "Orderly: add sequence by multiple cursors"
-      },
-      {
-        "command": "orderly.reorder",
-        "title": "Orderly: reorder"
+        "command": "orderly.regenerateOrder",
+        "title": "Orderly: re-generate order"
       }
     ]
   },
