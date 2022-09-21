@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		const s = editor.selections;
-		
+
 		editor.edit((edit) => {
 			let i = 1;
 			s.forEach(_s => {
@@ -37,19 +37,19 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 	let disposable2 = vscode.commands.registerCommand('orderly.sequenceStyle2', () => {
-        const editor = vscode.window.activeTextEditor;
-        if (editor === undefined) {
-            return;
-        }
-        const s = editor.selections;
+		const editor = vscode.window.activeTextEditor;
+		if (editor === undefined) {
+			return;
+		}
+		const s = editor.selections;
 
-        // get range
-        const textRange = new vscode.Range(s[0].start, s[0].end);
+		// get range
+		const textRange = new vscode.Range(s[0].start, s[0].end);
 
-        // get text
-        const text = editor.document.getText(s[0]);
+		// get text
+		const text = editor.document.getText(s[0]);
 
-        console.log("s", s[0].start, s[0].end, textRange, text);
+		console.log("s", s[0].start, s[0].end, textRange, text);
 
 		const regex = /\n[^$]/g;
 		const found = text.split(regex);
@@ -60,24 +60,68 @@ export function activate(context: vscode.ExtensionContext) {
 
 		let result = '';
 		let number = 1;
-		found.forEach( v => {
-			if(v.length !== 0) {
-				result += `${number}) ${v}\n`;
+		found.forEach(v => {
+			if (v.length !== 0) {
+				result += `${number}. ${v}\n`;
 				number++;
 			}
 		});
 
-        // TODO: use vscode.Range and insert the order for each line
+		// TODO: use vscode.Range and insert the order for each line
 		// TODO: after insertion, add pending cursor for each edition
-        editor.edit((edit) => {
-            // let i = 1;
+		editor.edit((edit) => {
+			// let i = 1;
 			edit.replace(textRange, result);
-        });
-    });
+		});
+	});
 
 
-	let disposable3 = vscode.commands.registerCommand('orderly.reorder', () => {
-		// find sequence and replace
+	let disposable3 = vscode.commands.registerCommand('orderly.regenerateOrder', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (editor === undefined) {
+			return;
+		}
+		const s = editor.selections;
+
+		// get range
+		const textRange = new vscode.Range(s[0].start, s[0].end);
+
+		// get text
+		const text = editor.document.getText(s[0]);
+
+		const regex = /\r?\n/;
+		const found = text.split(regex);
+
+		// return if empty
+		if (found?.length === 0) {
+			return;
+		}
+
+		let number = 1;
+		var result: string[] = [];
+
+		// process and re-generate the text
+		for (let i = 0; i < found.length; i++) {
+			const ele = found[i];
+			// keep the original whitespace text
+			if (ele.trim().length === 0) {
+				result.push(ele);
+				continue;
+			}
+
+			if (ele.search(/^\d+\./) === -1) {
+				result.push(`${number}. ` + ele);
+			} else {
+				result.push(ele.replace(/^\d+\./, `${number}. `));
+			}
+			number++;
+		}
+
+		// replace the final content
+		editor.edit((edit) => {
+			edit.replace(textRange, result.join('\n'));
+		});
+
 	});
 
 	context.subscriptions.push(disposable);
