@@ -49,29 +49,35 @@ export function activate(context: vscode.ExtensionContext) {
 		// get text
 		const text = editor.document.getText(s[0]);
 
-		console.log("s", s[0].start, s[0].end, textRange, text);
+		// console.log("s", s[0].start, s[0].end, textRange, text);
 
-		const regex = /\n[^$]/g;
+		const regex = /\r?\n/;
 		const found = text.split(regex);
 
+		// return if empty
 		if (found?.length === 0) {
 			return;
 		}
 
-		let result = '';
 		let number = 1;
-		found.forEach(v => {
-			if (v.length !== 0) {
-				result += `${number}. ${v}\n`;
-				number++;
-			}
-		});
+		var result: string[] = [];
+		// process and re-generate the text
+		for (let i = 0; i < found.length; i++) {
+			const ele = found[i];
 
-		// TODO: use vscode.Range and insert the order for each line
-		// TODO: after insertion, add pending cursor for each edition
+			// keep the original whitespace text
+			if (ele.trim().length === 0) {
+				result.push(ele);
+				continue;
+			}
+
+			result.push(`${number}. ${ele}`);			
+			number++;
+		}
+
 		editor.edit((edit) => {
 			// let i = 1;
-			edit.replace(textRange, result);
+			edit.replace(textRange, result.join('\n'));
 		});
 	});
 
@@ -110,9 +116,9 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			if (ele.search(/^\d+\./) === -1) {
-				result.push(`${number}. ` + ele);
+				result.push(`${number}.` + ele);
 			} else {
-				result.push(ele.replace(/^\d+\./, `${number}. `));
+				result.push(ele.replace(/^\d+\./, `${number}.`));
 			}
 			number++;
 		}
