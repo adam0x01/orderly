@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('orderly.sequenceStyle1', () => {
+	let disposable = vscode.commands.registerCommand('orderly.addSequenceMultipleCursors', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		const editor = vscode.window.activeTextEditor;
@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 
-	let disposable2 = vscode.commands.registerCommand('orderly.sequenceStyle2', () => {
+	let disposable2 = vscode.commands.registerCommand('orderly.addSequenceSingleSelection', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor === undefined) {
 			return;
