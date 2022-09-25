@@ -1,8 +1,10 @@
 {
-  "name": "orderly",
-  "displayName": "orderly",
+  "name": "Orderly",
+  "displayName": "Orderly",
   "description": "Generate numerical or alphabetical order list for your text.",
   "version": "0.0.1",
+  "repository": "https://github.com/adam0x01/orderly",
+  "publisher": "Orderly",
   "engines": {
     "vscode": "^1.71.0"
   },
