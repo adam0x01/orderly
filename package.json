@@ -6,8 +6,9 @@
   "repository": "https://github.com/adam0x01/orderly",
   "publisher": "Orderly",
   "engines": {
-    "vscode": "^1.71.0"
+    "vscode": "^1.50.1"
   },
+  "icon": "icon/logo@2x.png",
   "categories": [
     "Formatters"
   ],
