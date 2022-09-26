@@ -1,6 +1,17 @@
-# Orderly
+<p align="center">
+<img src="https://github.com/adam0x01/orderly/blob/main/icon/logo@2x.png?raw=true" alt="Logo" height="100"/>
+</p>
 
+<h1 align="center">
+Orderly
+</h1>
+<p align="center">
 This extension can help you to generate the sequence number for your text.
+</p>
+<p align="center">
+<a href="https://marketplace.visualstudio.com/items?itemName=order.order" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/orderly.orderly.svg?color=228cb2&amp;label=" alt="Visual Studio Marketplace Version" /></a>
+</h1>
+
 
 ##  Quick start
 1. In the VS Code editor, select the content that you want to add teh sequence number.
@@ -20,8 +31,5 @@ This extension can help you to generate the sequence number for your text.
 Initial release
 
 ---
-
-## Reference
-* https://github.com/tomoki1207/vscode-input-sequence/blob/master/extension.js
 
 **Enjoy!**
