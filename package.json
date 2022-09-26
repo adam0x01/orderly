@@ -1,7 +1,7 @@
 {
   "name": "Orderly",
-  "displayName": "Orderly",
-  "description": "Generate numerical or alphabetical order list for your text.",
+  "displayName": "Orderly - Add sequence number for your text",
+  "description": "Generate numerical order list for your text.",
   "version": "0.0.1",
   "repository": "https://github.com/adam0x01/orderly",
   "publisher": "Orderly",
@@ -43,7 +43,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.71.0",
+    "@types/vscode": "^1.50.1",
     "@types/glob": "^7.2.0",
     "@types/mocha": "^9.1.1",
     "@types/node": "16.x",

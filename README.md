@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/adam0x01/orderly/blob/main/icon/logo@2x.png?raw=true" alt="Logo" height="100"/>
+<img src="https://orderly.gallerycdn.vsassets.io/extensions/orderly/orderly/0.0.1/1664209337729/Microsoft.VisualStudio.Services.Icons.Default" alt="Logo" height="100"/>
 </p>
 
 <h1 align="center">
