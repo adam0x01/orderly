@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 		});
 
-		vscode.window.showInformationMessage('Hello World from orderly! test1');
+		// vscode.window.showInformationMessage('Hello World from orderly! test1');
 	});
 
 

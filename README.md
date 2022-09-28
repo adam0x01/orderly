@@ -21,9 +21,9 @@ This extension can help you to generate the sequence number for your text.
 ## Commands in Command Palette
 | Commands | Demo |
 | :-----| ----: |
-| Orderly: add sequence (multiple cursors) | <img alt="cmd_demo1" src="https://user-images.githubusercontent.com/842218/192575823-d9b21744-2f37-43c4-80ad-734a4d98a30a.gif">|
-| Orderly: add sequence (single selection) | (TODO:Gif) |
-| Orderly: re-generate order | (TODO:Gif) |
+| Orderly: add sequence (multiple cursors) | <img alt="cmd1_demo1" src="https://user-images.githubusercontent.com/842218/192780708-51513b64-9fdd-4c35-8f2d-3ec95dc1da82.gif">|
+| Orderly: add sequence (single selection) | <img alt="cmd2_demo1" src="https://user-images.githubusercontent.com/842218/192575823-d9b21744-2f37-43c4-80ad-734a4d98a30a.gif">|
+| Orderly: re-generate order | <img alt="cmd2_demo1" src="https://user-images.githubusercontent.com/842218/192780781-61fa12f0-ceee-4229-b644-5b8b252c707a.gif"> |
 
 ## Release Notes
 
