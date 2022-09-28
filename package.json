@@ -2,7 +2,7 @@
   "name": "Orderly",
   "displayName": "Orderly - Add sequence number for your text",
   "description": "Generate numerical order list for your text.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/adam0x01/orderly",
   "publisher": "Orderly",
   "engines": {
