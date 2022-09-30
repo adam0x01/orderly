@@ -45,7 +45,7 @@
     "test-web": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
 		"pretest-web": "npm run compile-web",
 		"vscode:prepublish-web": "npm run package-web",
-    "compile-web": "webpack",
+    "compile-web": "webpack ./src/web/extension.ts -o ./out/web/extension.js --mode development",
 		"watch-web": "webpack --watch",
 		"package-web": "webpack --mode production --devtool hidden-source-map"
   },
