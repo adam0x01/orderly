@@ -25,6 +25,16 @@ This extension can help you to generate the sequence number for your text.
 | Orderly: add sequence (single selection) | <img alt="cmd2_demo1" src="https://user-images.githubusercontent.com/842218/192575823-d9b21744-2f37-43c4-80ad-734a4d98a30a.gif">|
 | Orderly: re-generate order | <img alt="cmd2_demo1" src="https://user-images.githubusercontent.com/842218/192780781-61fa12f0-ceee-4229-b644-5b8b252c707a.gif"> |
 
+
+## Run locally
+```
+# Step 1 (compile the file to dist folder)
+npm run compile-web
+
+# Step 2
+Go to VS Code debug mode, run "Run Web Extension"
+
+```
 ## Release Notes
 
 ### 0.0.1

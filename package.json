@@ -6,18 +6,18 @@
   "repository": "https://github.com/adam0x01/orderly",
   "publisher": "Orderly",
   "engines": {
-    "vscode": "^1.50.1"
+    "vscode": "^1.65.0"
   },
   "icon": "icon/logo@2x.png",
   "categories": [
     "Formatters"
   ],
+  "browser": "./dist/web/extension.js",
   "activationEvents": [
     "onCommand:orderly.addSequenceMultipleCursors",
     "onCommand:orderly.addSequenceSingleSelection",
     "onCommand:orderly.regenerateOrder"
   ],
-  "browser": "./dist/web/extension.js",
   "contributes": {
     "commands": [
       {
