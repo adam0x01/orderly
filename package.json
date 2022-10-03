@@ -45,7 +45,7 @@
     "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
   },
   "devDependencies": {
-    "@types/vscode": "^1.71.0",
+    "@types/vscode": "^1.65.0",
     "@types/mocha": "^9.1.1",
     "eslint": "^8.20.0",
     "@typescript-eslint/eslint-plugin": "^5.31.0",

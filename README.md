@@ -27,7 +27,7 @@ This extension can help you to generate the sequence number for your text.
 
 
 ## Run locally
-```
+```bash
 # Step 1 (compile the file to dist folder)
 npm run compile-web
 
@@ -35,10 +35,24 @@ npm run compile-web
 Go to VS Code debug mode, run "Run Web Extension"
 
 ```
+
+## Publish
+```bash
+# Step 1
+npm run vscode:prepublish
+
+# Step 2
+vsce publish VERSION_NUMBER
+
+```
+
 ## Release Notes
 
-### 0.0.1
-Initial release
+### [0.0.4] - 2022-10-03
+- [Added] Support VS Code Web mode(https://vscode.dev/)
+
+### [0.0.3] - 2022-09-26
+- Initial release
 
 ---
 
